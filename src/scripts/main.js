@@ -197,6 +197,7 @@ btnNext.addEventListener("click", () => {
 carrosel.addEventListener("mouseenter", pararCarroselAuto);
 carrosel.addEventListener("mouseleave", iniciarCarroselAuto);
 
-// Quando for exibir o carrossel (após a carta), chame também:
+document.getElementById("carrosel-container").style.display = "flex";
 mostrarCarrosel(carroselIndex);
 iniciarCarroselAuto();
+
