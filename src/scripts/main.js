@@ -36,7 +36,10 @@ e escolher te amar, todos os dias, com a mesma intensidade do primeiro olhar.`,
   `Feliz Dia dos Namorados, meu Pipiu de coba.
 
 Com todo o meu coração,
-Seu Pipiu de Jitrafales (vulgo Allan)`
+Seu Pipiu de Jitrafales (vulgo Allan)
+
+
+ps. temacomigo`
 ];
 
 const divMensagem = document.getElementById("mensagem");
