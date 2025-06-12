@@ -129,76 +129,13 @@ for (let j = 0; j < numCoracoes; j++) {
   container.appendChild(coração);
 }
 
-// --- Carrossel de fotos e vídeos ---
-const carroselArquivos = [
-  "2.jpg",
-  "1.jpg",
-  "4.jpg",
-  "3.jpg",
-  "4.mp4",
-];
-
-const carrosel = document.getElementById("carrosel");
-const btnPrev = document.getElementById("carrosel-prev");
-const btnNext = document.getElementById("carrosel-next");
-let carroselIndex = 0;
-
-function mostrarCarrosel(index) {
-  carrosel.innerHTML = "";
-  const arquivo = carroselArquivos[index];
-  if (!arquivo) return;
-  const ext = arquivo.split('.').pop().toLowerCase();
-  let elemento;
-  if (["mp4", "webm", "ogg"].includes(ext)) {
-    elemento = document.createElement("video");
-    elemento.src = `src/assets/carrosel/${arquivo}`;
-    elemento.controls = true;
-    elemento.autoplay = false;
-    elemento.loop = true;
-    elemento.style.background = "#000";
-  } else if (["jpg", "jpeg", "png", "gif", "bmp", "webp"].includes(ext)) {
-    elemento = document.createElement("img");
-    elemento.src = `src/assets/carrosel/${arquivo}`;
-    elemento.alt = "Foto do carrossel";
-  } else {
-    elemento = document.createElement("div");
-    elemento.textContent = "Arquivo não suportado";
-  }
-  carrosel.appendChild(elemento);
-}
-
 let carroselAutoTimer = null;
 const carroselAutoInterval = 4000; // 4 segundos
 
-function iniciarCarroselAuto() {
-  if (carroselAutoTimer) clearInterval(carroselAutoTimer);
-  carroselAutoTimer = setInterval(() => {
-    carroselIndex = (carroselIndex + 1) % carroselArquivos.length;
-    mostrarCarrosel(carroselIndex);
-  }, carroselAutoInterval);
-}
 
-function pararCarroselAuto() {
-  if (carroselAutoTimer) clearInterval(carroselAutoTimer);
-}
 
-btnPrev.addEventListener("click", () => {
-  carroselIndex = (carroselIndex - 1 + carroselArquivos.length) % carroselArquivos.length;
-  mostrarCarrosel(carroselIndex);
-  iniciarCarroselAuto();
-});
 
-btnNext.addEventListener("click", () => {
-  carroselIndex = (carroselIndex + 1) % carroselArquivos.length;
-  mostrarCarrosel(carroselIndex);
-  iniciarCarroselAuto();
-});
 
-// Opcional: pausa rotação automática ao passar mouse
-carrosel.addEventListener("mouseenter", pararCarroselAuto);
-carrosel.addEventListener("mouseleave", iniciarCarroselAuto);
 
-document.getElementById("carrosel-container").style.display = "flex";
-mostrarCarrosel(carroselIndex);
-iniciarCarroselAuto();
+
 
