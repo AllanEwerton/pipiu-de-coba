@@ -131,9 +131,9 @@ for (let j = 0; j < numCoracoes; j++) {
 
 // --- Carrossel de fotos e vídeos ---
 const carroselArquivos = [
-
-  "1.jpg",
   "2.jpg",
+  "1.jpg",
+  "4.jpg",
   "3.jpg",
   "4.mp4",
 ];
