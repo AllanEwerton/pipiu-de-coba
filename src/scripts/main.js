@@ -187,6 +187,7 @@ btnPrev.addEventListener("click", () => {
   mostrarCarrosel(carroselIndex);
   iniciarCarroselAuto();
 });
+
 btnNext.addEventListener("click", () => {
   carroselIndex = (carroselIndex + 1) % carroselArquivos.length;
   mostrarCarrosel(carroselIndex);
